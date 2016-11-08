@@ -10,10 +10,14 @@ import UIKit
 
 class InputViewController: UIViewController {
 
+    @IBOutlet weak var labelPlaceholdersLeft: UILabel!
+    @IBOutlet weak var labelPlaceholderType: UILabel!
+    @IBOutlet weak var textInputPlaceholder: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let story = pickStory()
+        updateLabels(story: story!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +25,29 @@ class InputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    // From: http://stackoverflow.com/questions/36580542/i-cant-read-my-text-files-from-my-applications-bundle
+    func pickStory() -> Story? {
+        var res = ""
+        if let asset = NSDataAsset(name: "madlib0_simple") ,
+            let string = String(data:asset.data, encoding: String.Encoding.utf8){
+            res = string
+            
+            let story = Story(stream: res)
+            return story
+        }
+        else {
+            return nil
+        }
+    }
+    
+    func updateLabels(story: Story) {
+        let placeholdersLeft = story.getPlaceholderRemainingCount()
+        let placeHolderType = story.getNextPlaceholder()
+        labelPlaceholdersLeft.text = String(placeholdersLeft) + " word(s) left"
+        labelPlaceholderType.text = "Please type a/an " + placeHolderType
+    }
 
     /*
     // MARK: - Navigation
