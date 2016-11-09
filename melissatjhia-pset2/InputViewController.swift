@@ -10,16 +10,20 @@ import UIKit
 
 class InputViewController: UIViewController {
 
+    @IBOutlet weak var labelExplanation: UILabel!
     @IBOutlet weak var labelPlaceholdersLeft: UILabel!
     @IBOutlet weak var labelPlaceholderType: UILabel!
     @IBOutlet weak var textInputPlaceholder: UITextField!
     @IBOutlet weak var storySegue: UIButton!
     
+    var storyId = ""
+    var storyName = ""
     var story : Story?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         story = pickStory()
+        labelExplanation.text = "Fill in the words to complete '" + storyName + "'"
         updateLabels()
     }
 
@@ -31,7 +35,7 @@ class InputViewController: UIViewController {
     // From: http://stackoverflow.com/questions/36580542/i-cant-read-my-text-files-from-my-applications-bundle
     func pickStory() -> Story? {
         var res = ""
-        if let asset = NSDataAsset(name: "madlib0_simple") ,
+        if let asset = NSDataAsset(name: storyId) ,
             let string = String(data:asset.data, encoding: String.Encoding.utf8){
             res = string
             

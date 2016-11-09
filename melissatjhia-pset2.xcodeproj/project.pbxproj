@@ -60,7 +60,6 @@
 		F0C4AAC21DD0B3B900B604E2 /* melissatjhia-pset2 */ = {
 			isa = PBXGroup;
 			children = (
-				F0C4AAD91DD0B82200B604E2 /* Stories */,
 				F0C4AAD71DD0B7BF00B604E2 /* Story.swift */,
 				F0C4AAC31DD0B3B900B604E2 /* AppDelegate.swift */,
 				F0C4AAC51DD0B3B900B604E2 /* ViewController.swift */,
@@ -72,13 +71,6 @@
 				F0C4AACF1DD0B3B900B604E2 /* Info.plist */,
 			);
 			path = "melissatjhia-pset2";
-			sourceTree = "<group>";
-		};
-		F0C4AAD91DD0B82200B604E2 /* Stories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Stories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
