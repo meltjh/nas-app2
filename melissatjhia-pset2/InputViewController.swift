@@ -13,19 +13,20 @@ class InputViewController: UIViewController {
     @IBOutlet weak var labelPlaceholdersLeft: UILabel!
     @IBOutlet weak var labelPlaceholderType: UILabel!
     @IBOutlet weak var textInputPlaceholder: UITextField!
+    @IBOutlet weak var storySegue: UIButton!
+    
+    var story : Story?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let story = pickStory()
-        updateLabels(story: story!)
+        story = pickStory()
+        updateLabels()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     // From: http://stackoverflow.com/questions/36580542/i-cant-read-my-text-files-from-my-applications-bundle
     func pickStory() -> Story? {
@@ -42,21 +43,35 @@ class InputViewController: UIViewController {
         }
     }
     
-    func updateLabels(story: Story) {
-        let placeholdersLeft = story.getPlaceholderRemainingCount()
-        let placeHolderType = story.getNextPlaceholder()
-        labelPlaceholdersLeft.text = String(placeholdersLeft) + " word(s) left"
-        labelPlaceholderType.text = "Please type a/an " + placeHolderType
+    func updateLabels() {
+        textInputPlaceholder.text = ""
+        let placeholdersLeft = story?.getPlaceholderRemainingCount()
+        let placeHolderType = story?.getNextPlaceholder()
+        if (placeholdersLeft! > 0) {
+            labelPlaceholdersLeft.text = String(placeholdersLeft!) + " word(s) left"
+            labelPlaceholderType.text = "Please type a/an " + placeHolderType!
+            textInputPlaceholder.placeholder = placeHolderType
+        }
+        else {
+            labelPlaceholdersLeft.text = "All words are filled in!"
+            labelPlaceholderType.text = ""
+            storySegue.isHidden = false
+            
+            textInputPlaceholder.placeholder = ""
+            textInputPlaceholder.isEnabled = false
+        }
     }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func processInput(_ sender: UITextField) {
+        story?.fillInPlaceholder(word: sender.text!)
+        updateLabels()
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? ResultViewController {
+            vc.story = story
+        }
     }
-    */
-
 }
