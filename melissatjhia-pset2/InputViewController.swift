@@ -14,7 +14,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var labelPlaceholdersLeft: UILabel!
     @IBOutlet weak var labelPlaceholderType: UILabel!
     @IBOutlet weak var textInputPlaceholder: UITextField!
-    @IBOutlet weak var storySegue: UIButton!
+    @IBOutlet weak var storySegue: UIBarButtonItem!
     
     var storyId = ""
     var storyName = ""
@@ -59,7 +59,7 @@ class InputViewController: UIViewController {
         else {
             labelPlaceholdersLeft.text = "All words are filled in!"
             labelPlaceholderType.text = ""
-            storySegue.isHidden = false
+            storySegue.isEnabled = true
             
             textInputPlaceholder.placeholder = ""
             textInputPlaceholder.isEnabled = false
@@ -70,7 +70,7 @@ class InputViewController: UIViewController {
     @IBAction func processInput(_ sender: UITextField) {
         if textInputPlaceholder.text?.isEmpty == false {
             story?.fillInPlaceholder(word: sender.text!)
-            updateLabels()
+        updateLabels()
         }
     }
     
