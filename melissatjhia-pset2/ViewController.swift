@@ -30,7 +30,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         storyName = storyNames[0]
         storyId = storyNamesIds[storyName]!
-        print("begin" + storyId)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +57,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_: UIPickerView, didSelectRow: Int, inComponent: Int){
         storyName = storyNames[didSelectRow]
         storyId = storyNamesIds[storyName]!
-        print(storyId)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -68,9 +68,10 @@ class InputViewController: UIViewController {
     
 
     @IBAction func processInput(_ sender: UITextField) {
-        story?.fillInPlaceholder(word: sender.text!)
-        updateLabels()
-        
+        if textInputPlaceholder.text?.isEmpty == false {
+            story?.fillInPlaceholder(word: sender.text!)
+            updateLabels()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

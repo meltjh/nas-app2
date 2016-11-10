@@ -113,7 +113,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.89887088540000004" green="0.6360718608" blue="0.89599841830000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="hXC-NA-K8a" firstAttribute="leading" secondItem="xOW-EM-djw" secondAttribute="leading" id="3UN-4k-Dwy"/>
                                     <constraint firstAttribute="bottom" secondItem="hXC-NA-K8a" secondAttribute="bottom" constant="68" id="Aud-sZ-MXw"/>
@@ -164,32 +164,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heU-Uj-TgB">
-                                <rect key="frame" x="0.0" y="607" width="375" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-hS-LLO">
+                                <rect key="frame" x="21" y="122" width="332" height="285"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="K6M-Bd-gxt"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heU-Uj-TgB">
+                                <rect key="frame" x="0.0" y="502" width="375" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="166.5" id="EjD-Qf-Czs"/>
+                                    <constraint firstAttribute="height" constant="166.5" id="SrE-Z8-xUm"/>
+                                </constraints>
                                 <state key="normal" title="Start a new story!"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Yqh-1s-qmp"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-hS-LLO">
-                                <rect key="frame" x="12" y="64" width="350" height="535"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="heU-Uj-TgB" secondAttribute="trailing" id="3b5-c2-G8N"/>
                             <constraint firstAttribute="trailing" secondItem="heU-Uj-TgB" secondAttribute="trailing" id="5B5-LG-oVR"/>
                             <constraint firstAttribute="trailing" secondItem="Blh-hS-LLO" secondAttribute="trailing" constant="8" id="5sd-kx-TpS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Blh-hS-LLO" secondAttribute="trailing" constant="6" id="7gD-eT-tgH"/>
                             <constraint firstItem="4RX-TA-0tM" firstAttribute="top" secondItem="heU-Uj-TgB" secondAttribute="bottom" constant="8" id="9fe-Jz-t0F"/>
                             <constraint firstItem="Blh-hS-LLO" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leading" constant="8" id="BYk-Pn-e3m"/>
                             <constraint firstAttribute="trailing" secondItem="Blh-hS-LLO" secondAttribute="trailing" constant="20" id="GSS-LR-Kbg"/>
                             <constraint firstItem="heU-Uj-TgB" firstAttribute="top" secondItem="Blh-hS-LLO" secondAttribute="bottom" constant="8" id="LOJ-Hf-KxR"/>
+                            <constraint firstAttribute="trailing" secondItem="heU-Uj-TgB" secondAttribute="trailing" id="NfJ-Id-IAr"/>
+                            <constraint firstItem="heU-Uj-TgB" firstAttribute="top" secondItem="Blh-hS-LLO" secondAttribute="bottom" id="SOQ-ux-Y0L"/>
+                            <constraint firstItem="heU-Uj-TgB" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leading" id="X0u-lW-ouI"/>
                             <constraint firstItem="heU-Uj-TgB" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leading" id="aNt-hL-AP6"/>
+                            <constraint firstItem="4RX-TA-0tM" firstAttribute="top" secondItem="heU-Uj-TgB" secondAttribute="bottom" id="d3C-b6-Mqt"/>
                             <constraint firstItem="heU-Uj-TgB" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leading" id="e4n-fW-D3H"/>
+                            <constraint firstItem="Blh-hS-LLO" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leadingMargin" constant="6" id="eml-ld-qvh"/>
+                            <constraint firstItem="heU-Uj-TgB" firstAttribute="top" secondItem="Blh-hS-LLO" secondAttribute="bottom" id="fQO-Kz-NAy"/>
                             <constraint firstItem="Blh-hS-LLO" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leading" constant="20" id="koE-ti-RFk"/>
                             <constraint firstItem="heU-Uj-TgB" firstAttribute="top" secondItem="Blh-hS-LLO" secondAttribute="bottom" constant="8" id="rTw-km-zj7"/>
                             <constraint firstItem="Blh-hS-LLO" firstAttribute="leading" secondItem="o3s-KE-Ndo" secondAttribute="leading" id="slh-pR-Sh1"/>
