@@ -19,7 +19,6 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         storyText.text = story?.toString()
         navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,10 +26,10 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /**
-     Save the image of Mr. Potato Head.
-     Source rendering: https://www.hackingwithswift.com/example-code/media/how-to-render-a-uiview-to-a-uiimage
+    /* Source rendering: https://www.hackingwithswift.com/example-code/media/how-to-render-a-uiview-to-a-uiimage
      */
+    
+    /// Save an image of the story.
     @IBAction func saveImage(_ sender: Any) {
         // Render the view to an image that can be saved.
         let renderer = UIGraphicsImageRenderer(size: mainView.bounds.size)
@@ -41,11 +40,11 @@ class ResultViewController: UIViewController {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(checkIfSaved(_:savingError:contextInfo:)), nil);
     }
     
-    /**
-     Checks if the saving of the image to cameraroll has succeeded or failed.
-     Shows corresponding alert.
-     Source: https://www.hackingwithswift.com/example-code/media/uiimagewritetosavedphotosalbum-how-to-write-to-the-ios-photo-album
+
+     /* Source: https://www.hackingwithswift.com/example-code/media/uiimagewritetosavedphotosalbum-how-to-write-to-the-ios-photo-album
      */
+    
+    /// Checks if the saving of the image to cameraroll has succeeded or failed. Shows corresponding alert.
     func checkIfSaved(_ image: UIImage, savingError error: NSError?, contextInfo: UnsafeRawPointer) {
         // If saving failed to save.
         if let failed = error {
@@ -59,15 +58,4 @@ class ResultViewController: UIViewController {
             present(alertController, animated: true)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

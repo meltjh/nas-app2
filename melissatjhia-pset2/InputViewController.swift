@@ -10,10 +10,15 @@ import UIKit
 
 class InputViewController: UIViewController {
 
+    // The labels
     @IBOutlet weak var labelExplanation: UILabel!
     @IBOutlet weak var labelPlaceholdersLeft: UILabel!
     @IBOutlet weak var labelPlaceholderType: UILabel!
+    
+    // Text field
     @IBOutlet weak var textInputPlaceholder: UITextField!
+    
+    // Button to go to next page
     @IBOutlet weak var storySegue: UIBarButtonItem!
     
     var storyId = ""
@@ -47,10 +52,12 @@ class InputViewController: UIViewController {
         }
     }
     
+    /// Updates the labels for the next placeholder.
     func updateLabels() {
         textInputPlaceholder.text = ""
         let placeholdersLeft = story?.getPlaceholderRemainingCount()
         let placeHolderType = story?.getNextPlaceholder()
+        
         if (placeholdersLeft! > 0) {
             labelPlaceholdersLeft.text = String(placeholdersLeft!) + " word(s) left"
             labelPlaceholderType.text = "Please type a/an " + placeHolderType!
@@ -60,13 +67,12 @@ class InputViewController: UIViewController {
             labelPlaceholdersLeft.text = "All words are filled in!"
             labelPlaceholderType.text = ""
             storySegue.isEnabled = true
-            
             textInputPlaceholder.placeholder = ""
             textInputPlaceholder.isEnabled = false
         }
     }
-    
 
+    /// Fills in the placeholder and update labels
     @IBAction func processInput(_ sender: UITextField) {
         if textInputPlaceholder.text?.isEmpty == false {
             story?.fillInPlaceholder(word: sender.text!)
