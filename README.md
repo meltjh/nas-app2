@@ -7,7 +7,8 @@ In the first screen the user can choose a story.
 
 <img src="https://github.com/meltjh/nas-app2/raw/master/doc/home.png" width="250">  
 
-When the user continues, he/she is asked to fill in several words.   
+When the user continues, he/she is asked to fill in several words.
+The text field is placed higher so that the keyboard will not overlap it, also in landscape mode.
 The text in the labels change with the number of words that have to be filled in and the type of word.  
 
 <img src="https://github.com/meltjh/nas-app2/raw/master/doc/input.png" width="250">  
