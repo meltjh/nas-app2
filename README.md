@@ -12,7 +12,8 @@ The text in the labels change with the number of words that have to be filled in
 
 <img src="https://github.com/meltjh/nas-app2/raw/master/doc/input.png" width="250">  
 
-The button to read the story is disabled until all the words are filled in.  
+The button to read the story is disabled until all the words are filled in.   
+When all the words are filled in, the text field is disabled.
 
 <img src="https://github.com/meltjh/nas-app2/raw/master/doc/input_done.png" width="250">  
 
