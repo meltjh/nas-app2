@@ -37,17 +37,16 @@ class InputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // From: http://stackoverflow.com/questions/36580542/i-cant-read-my-text-files-from-my-applications-bundle
+    // Mostly from: http://stackoverflow.com/questions/36580542/i-cant-read-my-text-files-from-my-applications-bundle
     func pickStory() -> Story? {
-        var res = ""
         if let asset = NSDataAsset(name: storyId) ,
             let string = String(data:asset.data, encoding: String.Encoding.utf8){
-            res = string
             
-            let story = Story(stream: res)
+            let story = Story(stream: string)
             return story
         }
         else {
+            print("Story not found")
             return nil
         }
     }
