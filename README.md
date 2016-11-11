@@ -20,4 +20,4 @@ In the last screen the story is shown with the filled in words.
 The story can be saved in the cameraroll by tapping on 'Save story'.  
 The user is led to the first screen when tapping on 'Start a new story!'.  
 
-<img src="https://github.com/meltjh/nas-app2/raw/master/doc/image_saved.jpg" width="250">  
+<img src="https://github.com/meltjh/nas-app2/raw/master/doc/image_saved.JPG" width="250">  
